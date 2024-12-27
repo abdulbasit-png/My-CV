@@ -31,12 +31,12 @@ VLTJS.isMobile = {
 
 /**
  * Debounce resize
- */
+ 
 var debounceResize = _.debounce(function (e) {
   if (resizeArr.length) {
-    for (var i = 0; i < resizeArr.length; i++) {
-      resizeArr[i](e);
-    }
+    resizeArr.forEach(function (callback) {
+      callback(e);
+    });
   }
 }, 250);
 
@@ -53,11 +53,11 @@ VLTJS.debounceResize = function (callback) {
 
 VLTJS.addLedingZero = function (number) {
   return ("0" + number).slice(-2);
-};
+};*/
 
 /**
  * Throttle scroll
- */
+ 
 var throttleScroll = _.throttle(function () {
   if (throttleArr.length) {
     var scrollTop = VLTJS.window.scrollTop(),
@@ -100,7 +100,7 @@ VLTJS.throttleScroll = function (callback) {
   if (typeof callback === "function") {
     throttleArr.push(callback);
   }
-};
+};*/
 
 /**
  * VAR polyfill
